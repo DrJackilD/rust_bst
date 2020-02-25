@@ -50,7 +50,7 @@ where
         sb.push_str(&format!("\n{}{}{}", padding, pointer, self));
         let mut padding_str = String::from(padding);
         match has_right_leaf {
-            true => padding_str.push_str(&format!("{}   ", TRAVERSE_SYMBOL)),
+            true => padding_str.push_str(TRAVERSE_SYMBOL),
             false => padding_str.push_str("   "),
         }
         let left_pointer = if self.right.is_some() {

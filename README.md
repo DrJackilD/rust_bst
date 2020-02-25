@@ -6,13 +6,13 @@ Simple output:
 ```
 [root]
 ├──[node1]
-│     ├──[node3]
-│     └──[node4]
+│  ├──[node3]
+│  └──[node4]
 └──[node2]
    ├──[node5]
-   │     └──[node7]
-   │        ├──[node8]
-   │        └──[node9]
+   │  └──[node7]
+   │     ├──[node8]
+   │     └──[node9]
    └──[node6]
 ```
 
