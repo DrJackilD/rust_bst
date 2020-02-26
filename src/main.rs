@@ -1,23 +1,30 @@
-use bst::{Node, Tree};
+use bst::Tree;
 
 fn main() {
-    let root = Node::new("root")
-        .left(
-            Node::new("node1")
-                .left(Node::new("node3"))
-                .right(Node::new("node4")),
-        )
-        .right(
-            Node::new("node2")
-                .left(
-                    Node::new("node5").left(
-                        Node::new("node7")
-                            .left(Node::new("node8"))
-                            .right(Node::new("node9")),
-                    ),
-                )
-                .right(Node::new("node6")),
-        );
-    let tree = Tree::new(root);
-    println!("{}", tree.to_string());
+    println!("Tree with integers");
+    let mut int_tree = Tree::new();
+    int_tree
+        .insert(5)
+        .insert(6)
+        .insert(4)
+        .insert(3)
+        .insert(10)
+        .insert(11)
+        .insert(7)
+        .insert(8)
+        .insert(2)
+        .insert(1);
+    println!("{}", int_tree.to_string());
+    println!("\nTree with strings");
+    let mut str_tree = Tree::new();
+    str_tree
+        .insert("node5")
+        .insert("node7")
+        .insert("node3")
+        .insert("node4")
+        .insert("node2")
+        .insert("node1")
+        .insert("node8")
+        .insert("node9");
+    println!("{}", str_tree.to_string());
 }
