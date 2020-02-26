@@ -19,5 +19,5 @@ fn main() {
                 .right(Node::new("node6")),
         );
     let tree = Tree::new(root);
-    println!("{}", tree.show());
+    println!("{}", tree.to_string());
 }
