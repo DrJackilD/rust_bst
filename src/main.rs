@@ -29,4 +29,11 @@ fn main() {
         .insert("person4", "Borogor")
         .insert("person7", "Azriel");
     println!("{}", str_tree.to_string());
+
+    println!("Search for key 'person7'");
+    let result = match str_tree.search("person7") {
+        Some(node) => node.to_string(),
+        None => String::from("Key not found"),
+    };
+    println!("{}", result);
 }

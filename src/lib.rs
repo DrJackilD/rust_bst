@@ -27,6 +27,13 @@ where
         self
     }
 
+    pub fn search(&self, key: T) -> Option<&Node<T, V>> {
+        match &self.root {
+            Some(root) => root.search(key),
+            None => None,
+        }
+    }
+
     pub fn to_string(&self) -> String
     where
         T: Display,
@@ -116,6 +123,22 @@ where
             Some(leaf) => leaf.insert(key, value),
             None => self.right = Some(Box::new(Node::new(key, value))),
         };
+    }
+
+    pub fn search(&self, key: T) -> Option<&Self> {
+        if key > self.key {
+            match &self.right {
+                Some(node) => return node.search(key),
+                None => None,
+            }
+        } else if key == self.key {
+            return Some(self);
+        } else {
+            match &self.left {
+                Some(node) => node.search(key),
+                None => None,
+            }
+        }
     }
 }
 

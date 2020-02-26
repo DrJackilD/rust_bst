@@ -7,38 +7,19 @@ Algorithm of visual representation taken from here: https://www.baeldung.com/jav
 use bst::Tree;
 
 fn main() {
-    println!("Tree with integers");
-    let mut int_tree = Tree::new();
-    int_tree
-        .insert(5, "Hello world")
-        .insert(6, "Traits")
-        .insert(4, "Boundary")
-        .insert(3, "Variables")
-        .insert(10, "Closures")
-        .insert(11, "Lifetimes")
-        .insert(7, "Borrowing")
-        .insert(8, "Functiona programming")
-        .insert(2, "Cargo")
-        .insert(1, "Crates");
-    println!("{}", int_tree.to_string());
-    println!("\nTree with strings");
-    let mut str_tree = Tree::new();
-    str_tree
-        .insert("person5", "Sam")
-        .insert("person2", "Frodo")
-        .insert("person8", "Gandalf")
-        .insert("person6", "Boromyr")
-        .insert("person10", "Aragorn")
-        .insert("person11", "Elf")
-        .insert("person9", "Bilbo")
-        .insert("person3", "Aramyr")
-        .insert("person4", "Borogor")
-        .insert("person7", "Azriel");
-    println!("{}", str_tree.to_string());
+   let tree = Tree::new();
+   tree
+      .insert(5, "A")
+      .insert(2, "B");
+   println!("{}", tree.to_string());
+   match tree.search(2) {
+      Some(node) => println!("{}", node.to_string()),
+      None => println!("Key not found"),
+   };
 }
 ```
 
-### Sample output:
+## Sample output from `main.rs`:
 ```
 Tree with integers
 [5(Hello world)]
@@ -63,11 +44,13 @@ Tree with strings
    ╠══[person6(Boromyr)]
    ║  ╚══[person7(Azriel)]
    ╚══[person9(Bilbo)]
+Search for key 'person7'
+[person7(Azriel)]
 ```
 
 ## Roadmap
 - [x] Insert
-- [ ] Search
+- [x] Search
 - [x] Preorder Traversal
 - [ ] Inorder Traversal
 - [ ] Postorder Traversal
