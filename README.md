@@ -10,28 +10,30 @@ fn main() {
     println!("Tree with integers");
     let mut int_tree = Tree::new();
     int_tree
-        .insert(5)
-        .insert(6)
-        .insert(4)
-        .insert(3)
-        .insert(10)
-        .insert(11)
-        .insert(7)
-        .insert(8)
-        .insert(2)
-        .insert(1);
+        .insert(5, "Hello world")
+        .insert(6, "Traits")
+        .insert(4, "Boundary")
+        .insert(3, "Variables")
+        .insert(10, "Closures")
+        .insert(11, "Lifetimes")
+        .insert(7, "Borrowing")
+        .insert(8, "Functiona programming")
+        .insert(2, "Cargo")
+        .insert(1, "Crates");
     println!("{}", int_tree.to_string());
     println!("\nTree with strings");
     let mut str_tree = Tree::new();
     str_tree
-        .insert("node5")
-        .insert("node7")
-        .insert("node3")
-        .insert("node4")
-        .insert("node2")
-        .insert("node1")
-        .insert("node8")
-        .insert("node9");
+        .insert("person5", "Sam")
+        .insert("person2", "Frodo")
+        .insert("person8", "Gandalf")
+        .insert("person6", "Boromyr")
+        .insert("person10", "Aragorn")
+        .insert("person11", "Elf")
+        .insert("person9", "Bilbo")
+        .insert("person3", "Aramyr")
+        .insert("person4", "Borogor")
+        .insert("person7", "Azriel");
     println!("{}", str_tree.to_string());
 }
 ```
@@ -39,26 +41,28 @@ fn main() {
 ### Sample output:
 ```
 Tree with integers
-[5]
-├──[4]
-│  └──[3]
-│     └──[2]
-│        └──[1]
-└──[6]
-   └──[10]
-      ├──[7]
-      │  └──[8]
-      └──[11]
+[5(Hello world)]
+╠══[4(Boundary)]
+║  ╚══[3(Variables)]
+║     ╚══[2(Cargo)]
+║        ╚══[1(Crates)]
+╚══[6(Traits)]
+   ╚══[10(Closures)]
+      ╠══[7(Borrowing)]
+      ║  ╚══[8(Functiona programming)]
+      ╚══[11(Lifetimes)]
 
 Tree with strings
-[node5]
-├──[node3]
-│  ├──[node2]
-│  │  └──[node1]
-│  └──[node4]
-└──[node7]
-   └──[node8]
-      └──[node9]
+[person5(Sam)]
+╠══[person2(Frodo)]
+║  ╠══[person10(Aragorn)]
+║  ║  ╚══[person11(Elf)]
+║  ╚══[person3(Aramyr)]
+║     ╚══[person4(Borogor)]
+╚══[person8(Gandalf)]
+   ╠══[person6(Boromyr)]
+   ║  ╚══[person7(Azriel)]
+   ╚══[person9(Bilbo)]
 ```
 
 ## Roadmap
